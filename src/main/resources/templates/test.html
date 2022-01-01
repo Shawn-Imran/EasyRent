@@ -1,0 +1,11 @@
+<html>
+<head>
+
+</head>
+<body>
+<form method="post" th:action="@{postTest}" th:object="${test}">
+   <button type="submit">Submit</button>
+    <textarea th:field="*{t}"></textarea>
+</form>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!--
+author: Tamzid
+Github URL: https://github.com/Tamzid19597
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="images/icon.png">
+    <title>EasyRent|Services</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Super Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+
+<body>
+<!-- header -->
+<div class="agileits_header">
+    <div class="container">
+        <div class="w3l_offers">
+            <p>Easy<a href="http://localhost:8080/home">Rent</a></p>
+        </div>
+        <div class="agile-login">
+            <ul>
+                <li><a href="http://localhost:8080/register"> Create Account </a></li>
+                <li><a href="http://localhost:8080/login">Login</a></li>
+                <li><a href="http://localhost:8080/contact">Help</a></li>
+
+            </ul>
+        </div>
+        <div class="product_list_header">
+            <form action="#" method="post" class="last" th:action="@{/postProfile}" th:object="${profile}">
+                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-user" aria-hidden="true"></i></button>
+            </form>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<div class="logo_products">
+    <div class="container">
+        <div class="w3ls_logo_products_left1">
+            <ul class="phone_email">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>Order online or call us : (+880)1959-752029</li>
+
+            </ul>
+        </div>
+        <div class="w3ls_logo_products_left">
+            <img src="images/ER_01.png" alt=" " class="My-img-responsive">
+        </div>
+
+
+        <div class="w3l_search">
+            <form method="post" th:action="@{/postSearch}" th:object="${profile}">
+
+                <input type="search" name="Search" placeholder="Search for a Product...">
+                <button type="submit" class="btn btn-default search" aria-label="Left Align">
+                    <i class="fa fa-search" aria-hidden="true"> </i>
+                </button>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+
+
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- //header -->
+<!-- navigation -->
+<div class="navigation-agileits">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header nav_2">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="http://localhost:8080/home" class="act">Home</a></li>
+                    <!-- Mega Menu -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transport<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>All Transports</h6>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${cars}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Cars</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${bikes}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Bikes</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${buses}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Buses</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${bicycle}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Bicycle</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${boats}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Boats</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${planes}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Planes</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${trucks}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Trucks</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Property<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>All Properties</h6>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${apartment}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Apartment</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${commercial}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Commercial</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${house}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">House</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${officespace}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">OfficeSpace</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${factory}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Factory</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${warehouse}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Warehouse</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Heavy Equipment<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Heavy Equipment</h6>
+
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${excavator}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Excavator</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${crane}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Crane</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${roadroller}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">RoadRoller</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${bulldozer}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Bulldozer</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${weldingmachine}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">WeldingMachine</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Office Equipment<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Office Equipment</h6>
+
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${ac}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">AC</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${projector}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Projector</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${printer}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Printer</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${scanner}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Scanner</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${laminator}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Laminator</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Event Equipment<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Event Equipment</h6>
+
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${accommodation}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Accommodation</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${catering}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Catering</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${livecast}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">LiveCast</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${sound}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Sound</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${stage}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Stage</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${chairandtable}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Chair&Table</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appliances<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Home Appliances</h6>
+
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${electricdevices}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">ElectricDevices</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${gasstove}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">GasStove</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${cleaner}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Cleaner</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${cooker}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">Cooker</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${ac}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">AC</button>
+                                        </form>
+                                        <form method="post" th:action="@{/postNavigation}" th:object="${navigation}">
+                                            <input type="hidden" th:value="${clothdryer}" th:attr="name='flag'"/>
+                                            <button class="w3view-cart" type="submit">ClothDryer</button>
+                                        </form>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <!--                        <li><a href="offers.html">Offers</a></li>-->
+                    <li><a href="http://localhost:8080/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- //navigation -->
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+                <li><a href="http://localhost:8080/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+                <li class="active">Contact</li>
+            </ol>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
+    <!-- contact -->
+    <div class="about">
+        <div class="w3_agileits_contact_grids">
+            <div class="col-md-6 w3_agileits_contact_grid_left">
+                <div class="agile_map">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="896" height="660" id="gmap_canvas" src="https://maps.google.com/maps?q=Uttara&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 660px;
+                                    width: 896px;
+                                }
+                            </style><a href="https://www.embedgooglemap.net">google map in html</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none!important;
+                                    height: 660px;
+                                    width: 896px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3905851087434!2d-34.90500565012194!3d-8.061582082752993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18d90992e4ab%3A0x8e83c4afabe39a3a!2sSport+Club+Do+Recife!5e0!3m2!1sen!2sin!4v1478684415917"
+                        style="border:0"></iframe> -->
+                </div>
+                <div class="agileits_w3layouts_map_pos">
+                    <div class="agileits_w3layouts_map_pos1">
+                        <h3>Contact Info</h3>
+                        <p>1234k Avenue, 4th block,Uttara.</p>
+                        <ul class="wthree_contact_info_address">
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@easyrent.com</a></li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i>+880 1959 752029</li>
+                        </ul>
+                        <div class="w3_agile_social_icons w3_agile_social_icons_contact">
+                            <ul>
+                                <li>
+                                    <a href="#" class="icon icon-cube agile_facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon icon-cube agile_rss"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="icon icon-cube agile_t"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 w3_agileits_contact_grid_right">
+                <h2 class="w3_agile_header">Leave a<span> Message</span></h2>
+
+                <form action="#" method="post">
+                    <span class="input input--ichiro">
+						<input class="input__field input__field--ichiro" type="text" id="input-25" name="Name" placeholder=" " required="" />
+						<label class="input__label input__label--ichiro" for="input-25">
+							<span class="input__label-content input__label-content--ichiro">Your Name</span>
+                    </label>
+                    </span>
+                    <span class="input input--ichiro">
+						<input class="input__field input__field--ichiro" type="email" id="input-26" name="Email" placeholder=" " required="" />
+						<label class="input__label input__label--ichiro" for="input-26">
+							<span class="input__label-content input__label-content--ichiro">Your Email</span>
+                    </label>
+                    </span>
+                    <textarea name="Message" placeholder="Your message here..." required=""></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- contact -->
+
+<!-- //footer -->
+<div class="footer">
+    <div class="container">
+        <div class="w3_footer_grids">
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Contact</h3>
+
+                <ul class="address">
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>Uttara,Dhaka.</span></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@easyrent.com">info@easyrent.com</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+880 1959 752029</li>
+                </ul>
+            </div>
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Information</h3>
+                <ul class="info">
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/contact">About Us</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/contact">Contact Us</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/faq">FAQ's</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Associates</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Category</h3>
+                <ul class="info">
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Transportation</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Properties</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Heavy Equipment</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Event Equipment</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Office Equipment</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Profile</h3>
+                <ul class="info">
+                    <li>
+                        <form action="#" method="post" class="last" th:action="@{/postProfile}" th:object="${profile}">
+                            <!--                    <input type="hidden" name="cmd" value="_cart">-->
+                            <!--                    <input type="hidden" name="display" value="1">-->
+                            <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-user" aria-hidden="true"></i></button>
+                        </form>
+                    </li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/services">Rentals</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/login">Login</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="http://localhost:8080/register">Create Account</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+    <div class="footer-copy">
+
+        <div class="container">
+            <p>© 2021 EasyRent. All rights reserved | Design by <a href="#">Tamzid</a></p>
+        </div>
+    </div>
+
+</div>
+<div class="footer-botm">
+    <div class="container">
+        <div class="w3layouts-foot">
+            <ul>
+                <li><a href="https://www.facebook.com/abumauze.tamzidkhan/" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/TamzidKhan_0" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/Tamzid19597" class="w3_agile_dribble"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/watch?v=Ix9NXVIbm2A" class="w3_agile_vimeo"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="payment-w3ls">
+            <img src="images/cardF.png" alt=" " class="img-responsive">
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- //footer -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- top-header and slider -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            	var defaults = {
+            	containerID: 'toTop', // fading element id
+            	containerHoverID: 'toTopHover', // fading element hover id
+            	scrollSpeed: 1200,
+            	easingType: 'linear' 
+            	};
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <script src="js/minicart.min.js"></script>
+    <script>
+        // Mini Cart
+        paypal.minicart.render({
+            action: '#'
+        });
+
+        if (~window.location.search.indexOf('reset=true')) {
+            paypal.minicart.reset();
+        }
+    </script>
+    <!-- main slider-banner -->
+    <script src="js/skdslider.min.js"></script>
+    <link href="css/skdslider.css" rel="stylesheet">
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('#demo1').skdslider({
+                'delay': 5000,
+                'animationSpeed': 2000,
+                'showNextPrev': true,
+                'showPlayButton': true,
+                'autoSlide': true,
+                'animationType': 'fading'
+            });
+
+            jQuery('#responsive').change(function() {
+                $('#responsive_wrapper').width(jQuery(this).val());
+            });
+
+        });
+    </script>
+    <!-- //main slider-banner -->
+
+</body>
+
+</html>
